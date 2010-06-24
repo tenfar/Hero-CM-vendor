@@ -16,6 +16,8 @@
 
 # To be included directly by a product makefile; do not use inherit-product.
 
+DEVICE_PACKAGE_OVERLAYS := vendor/htc/hero/overlay
+
 NO_DEFAULT_SOUNDS := true
 
 PRODUCT_PROPERTY_OVERRIDES += \
