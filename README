@@ -1,0 +1,27 @@
+In order to compile Cyanogen
+
+1. cd to your-cyanogen-source/vendor/htc
+
+2. git clone git@github.com:maxisma/Hero-CM-vendor.git hero
+
+3. edit vendor/cyanogen/vendorsetup.sh by adding a new line:
+add_lunch_combo cyanogen_hero-eng
+
+4. edit vendor/cyanogen/products/AndroidProducts.mk and add a new line:
+         $(LOCAL_DIR)/cyanogen_hero.mk \
+
+*You will need to remove the line that contains cyanogen_supersonic until it is fully included in the repository
+
+5. copy vendor/htc/hero/added_files/cyanogen_hero.mk to vendor/cyanogen/products/
+
+6. push your favourite boot animation to vendor/htc/hero/media/
+
+7. execute vendor/htc/hero/extract-files.sh to copy proprietary and prebuilt files from your current rom
+
+8. put your favourite kernel in vendor/htc/prebuilt. Make sure it is named "kernel".
+
+9. execute ". ./build/envsetup.sh"
+
+10. execute "lunch" and choose "cyanogen_hero-eng"
+
+11. make :)
